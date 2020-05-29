@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/vlukashov/vaadin-splash-screen-demo)
+
 # Vaadin 14+ Splash Screen demo
 
 This app shows a splash screen until the first application view is loaded.
