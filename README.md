@@ -1,9 +1,14 @@
-# Project Base for Vaadin and Spring Boot
+# Vaadin 14+ Splash Screen demo
 
-This project can be used as a starting point to create your own Vaadin application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+This app shows a splash screen until the first application view is loaded.
+The splash screen has a simple CSS spinner, taken from https://tobiasahlin.com/spinkit/. 
+The HTML / CSS for it is inlined into the `frontend/index.html` file.
+Inlining is important for splash screens because you would want to show it ASAP, and loading separate CSS files adds time.
+The code to hide the splash screen is in the end of the `frontend/index.ts` file.
 
-The best way to create your own project based on this starter is [start.vaadin.com](https://start.vaadin.com/) - you can get only the necessary parts and choose the package naming you want to use.
+
+See the [`v14`](https://github.com/vlukashov/vaadin-splash-screen-demo/tree/v14) branch for a Vaadin 14 (LTS) version.
+The `master` branch is Vaadin 16.
 
 ## Running the Application
 
