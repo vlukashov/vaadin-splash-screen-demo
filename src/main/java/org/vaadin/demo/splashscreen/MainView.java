@@ -1,6 +1,7 @@
 package org.vaadin.demo.splashscreen;
 
 import com.vaadin.flow.component.Key;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dependency.CssImport;
@@ -8,7 +9,9 @@ import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.InitialPageSettings;
 import com.vaadin.flow.server.PWA;
+import com.vaadin.flow.server.PageConfigurator;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -30,7 +33,7 @@ import org.springframework.beans.factory.annotation.Autowired;
         enableInstallPrompt = false)
 @CssImport("./styles/shared-styles.css")
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
-public class MainView extends VerticalLayout {
+public class MainView extends VerticalLayout implements PageConfigurator {
 
     /**
      * Construct a new Vaadin view.
@@ -60,6 +63,15 @@ public class MainView extends VerticalLayout {
         addClassName("centered-content");
 
         add(textField, button);
+
+        // hide the splash screen after the main view is loaded
+        UI.getCurrent().getPage().executeJs(
+                "document.querySelector('#splash-screen').classList.add('loaded')");
     }
 
+    @Override
+    public void configurePage(InitialPageSettings initialPageSettings) {
+        initialPageSettings.addInlineFromFile("splash-screen.html",
+                InitialPageSettings.WrapMode.NONE);
+    }
 }
