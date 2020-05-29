@@ -138,7 +138,7 @@
                      the default Spring Boot's 30sec timeout.  -->
                 <configuration>
                     <wait>500</wait>
-                    <maxAttempts>240</maxAttempts>
+                    <maxAttempts>1200</maxAttempts>
                 </configuration>
             </plugin>
 
