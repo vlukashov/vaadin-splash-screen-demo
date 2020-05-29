@@ -1,6 +1,6 @@
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/vlukashov/vaadin-splash-screen-demo/tree/v14)
 
-# Vaadin 14+ Splash Screen demo
+# Vaadin 14 Splash Screen demo
 
 This app shows a splash screen until the first application view is loaded.
 The splash screen has a simple CSS spinner, taken from https://tobiasahlin.com/spinkit/. 
